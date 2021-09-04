@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+      <title>Course Shop | Welcome</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Fredoka+One&family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title></title>
+    <style>
+#Python
+{
+  margin-left: 20px;
+  margin-top: 30px;
+  padding-bottom: 40px;
+}
+.hero-image
+{
+  margin-top:0px;
+  padding-top:50px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),url('{% static "img/after1.jpg" %}');
+  height: 47%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+  #footer1
+    {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #04AA6D;
+        color: white;
+        padding-top: 10px;
+        text-align: center;
+        font-family: Quicksand, sans-serif;
+    }
+    body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Fredoka One', cursive;
+}
+.box {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+
+.our-services {
+    margin-top: 75px;
+    padding-bottom: 30px;
+    padding: 0 60px;
+    min-height: 198px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all .4s ease-in-out;
+    box-shadow: 0 0 25px 0 rgba(20, 27, 202, .17)
+}
+
+.our-services .icon {
+    margin-bottom: -21px;
+    transform: translateY(-50%);
+    text-align: center
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url('{% static "img/sample.jpg" %}');
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src='{% static "img/logo1.png" %}' width="40px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item {% block homeactive %}  {% endblock homeactive %}">
+              <a class="nav-link" href="/afterlogin">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item {% block aboutactive %}  {% endblock aboutactive %}" >
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item {% block contactactive %}  {% endblock contactactive %} ">
+              <a class="nav-link" href="/mycourses">My Courses</a>
+            </li>
+
+
+
+          </ul>
+          <div class="ml-auto form-inline ">
+
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-dismissible alert-success">
+
+            <button type="button" class="close" data-dismiss="alert">
+            ×
+            </button>
+          <strong>Message : </strong> {{ message }}
+          </div>
+          {% endfor %}
+          {% endif %}
+
+
+<ul class="navbar-nav ml-2">
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown"> Welcome {{request.user}}</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          <a class="dropdown-item" href="/logout">Logout</a>
+
+        </div>
+      </li>
+      </ul>
+      </div>
+</nav>
+
+<div class="hero-image">
+  <div class="hero-text">
+  <p style="font-size:35px">Welcome to Course Shop!</p>
+    <p style="font-size:65px">Restless learners</p>
+     <h1 style="font-size:45px;color:red">change the world</h1>
+  </div>
+</div>
+<br>
+<img src='{% static "img/our.png" %}' width="200px" class="center">
+<br>
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services settings">
+                    <div class="icon"> <img src='{% static "img/pyth.png" %}'> </div>
+                    <h4>Python Programming</h4>
+                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#PythonModal">
+                    Details
+                    </button>
+                    <a href="/order" class="btn btn-primary mr-2" role="button" data-bs-toggle="button">Buy</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services speedup">
+                    <div class="icon"> <img src='{% static "img/emd.png" %}'> </div>
+                    <h4>Embedded System Design</h4>
+                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#EmbModal">
+                    Details
+                    </button>
+                    <a href="/order" class="btn btn-primary mr-2" role="button" data-bs-toggle="button">Buy</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services privacy">
+                    <div class="icon"> <img src='{% static "img/android.png" %}'> </div>
+                    <h4>Android Application & Development</h4>
+                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#AndModal">
+                    Details
+                    </button>
+                  <a href="/order" class="btn btn-primary mr-2" role="button" data-bs-toggle="button">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services backups">
+                    <div class="icon"> <img src='{% static "img/iot.png" %}'> </div><br>
+                    <h4>Internet of Things with Raspberry Pi</h4>
+                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#IOTModal">
+                    Details
+                    </button>
+                    <a href="/order" class="btn btn-primary mr-2" role="button" data-bs-toggle="button">Buy</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services ssl">
+                    <div class="icon"> <img src='{% static "img/cplus.png" %}'> </div><br>
+                    <h4>C++ Programming</h4>
+                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#CModal">
+                    Details
+                    </button>
+                  <a href="/order" class="btn btn-primary mr-2" role="button" data-bs-toggle="button">Buy</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services database">
+                    <div class="icon"> <img src='{% static "img/digi.png" %}'> </div><br>
+                    <h4>Digital Marketing & Entrepreneurship</h4>
+                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#DigiModal">
+                    Details
+                    </button>
+                    <a href="/order" class="btn btn-primary mr-2" role="button" data-bs-toggle="button">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer1">
+<p>Copyright © 2021 by Course Shop. All Rights Reserved.</p>
+</div>
+
+<!-- Python Modal -->
+<div class="modal fade" id="PythonModal" tabindex="-1" aria-labelledby="PythonModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="PythonModalTitle">About Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+By the end of the course students will have gained a fundamental understanding of programming in Python by creating a variety of scripts and applications for the Web and for systems development. Python is a versatile programming language, suitable for projects ranging from small scripts to large systems. The course emphasizes best practices such as version control, unit testing and recommended styles and idioms. Students will explore the large standard library of Python 3, which supports many common programming tasks.<br>
+<br>Duration:&nbsp
+This is a 15 Days/ 30 hours program and most of the syllabus will be case study based or practical oriented.<br>
+<br> Course Fee: Free</br>
+<br>Requirements:&nbsp<br>
+ •Computer, Laptop or Android Phone<br> • No prerequisite coding Knowledge
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- Embedded System Design Modal -->
+      <div class="modal fade" id="EmbModal" tabindex="-1" aria-labelledby="EmbModalModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="EmbModalTitle">About Course</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+    This course is designed especially for beginners, exploring an online course to learn the fundamentals of Embedded System. This training is essentially focused on teaching you the basics of Embedded System which will further encourage you to work on more projects with the assurance of generating precise work for system infrastructures and Resource-constrained applications. You will comprehend the language from, flaw to advance and can, scrutinize your ability with a small guided project at the end of the course.Online live classes will let you explore Embedded System at your ease and on-spot doubt resolutions, making it more apparent. You will experience real-time programming and debugging with our experienced facility in live classes. We will schedule special doubt sessions on student's demand.Guest Lecture will be a part of the training to let you discuss your career-related doubts and queries.<br>
+      <br>Duration:&nbsp
+      This is a 15 Days/ 30 hours program and most of the syllabus will be case study based or practical oriented.<br>
+      <br> Course Fee: Free</br>
+      <br>Requirements:&nbsp<br>
+       •Computer, Laptop or Android Phone<br> •  Basic knowledge of C programming language and Basic Electronics.
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- IOT Modal -->
+      <div class="modal fade" id="IOTModal" tabindex="-1" aria-labelledby="IOTModalModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="IOTModalTitle">About Course</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+    This course is designed especially for beginners, exploring an online course to learn the fundamentals of IOT. This course is essentially focused on teaching you the basics of IOT which will further encourage you to work on more projects with the assurance of generating precise work for system infrastructures and Resource-constrained applications. You will comprehend the language from, flaw to advance and can, scrutinize your ability with a small guided project at the end of the course. Online live classes will let you explore IOT at your ease and on-spot doubt resolutions, making it more apparent. You will experience real-time programming and debugging with our experienced facility in live classes. We will schedule special doubt sessions on student's demand. Guest Lecture will be a part of the course to let you discuss your career-related doubts and queries. <br>
+      <br>Duration:&nbsp
+      This is a 15 Days/ 30 hours program and most of the syllabus will be case study based or practical oriented.<br>
+      <br> Course Fee: Free</br>
+      <br>Requirements:&nbsp<br>
+       •Computer, Laptop or Android Phone<br> • Basic knowledge of C programming language and Basic Electronics.
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- C++ Modal -->
+      <div class="modal fade" id="CModal" tabindex="-1" aria-labelledby="CModalModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="CModalTitle">About Course</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+    C++ is an object-oriented general programming language featured with low-level memory manipulation attribute. This language was created by Bjarne Stroustrup as an extension of the C Programming language. It was designed, moulding its design highlights prioritising embedded and resource-constrained software, system programming and large systems, with performance, efficiency, and flexible usage. This language is useful in many contexts with system infrastructure and resource-constrained applications, as it's, strength key factors. It could be used to develop desktop applications, video games, servers like Web Search, SQL servers etc. And other performance-critical applications, being it television switches or space probes. This language has attained great popularity among software developers and computer scientists, to develop more user-friendly applications substantiating its widespread practices. Learning to write codes in his language is relatively analogous to that of C Programming, making it susceptible for basic C programmers to acquire C++ Programming skills easily. <br>
+      <br>Duration:&nbsp
+      This is a 15 Days/ 30 hours program and most of the syllabus will be case study based or practical oriented.<br>
+      <br> Course Fee: Free</br>
+      <br>Requirements:&nbsp<br>
+       •Computer, Laptop or Android Phone<br> • No prerequisite coding Knowledge.
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Digital Modal -->
+      <div class="modal fade" id="DigiModal" tabindex="-1" aria-labelledby="DigiModalModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="DigiModalTitle">About Course</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              This online course gives you an in-depth understanding and advanced knowledge of the eight most important digital marketing domains and includes real-world projects and virtual simulations for gaining domain experience. You’ll be exposed to 30 digital marketing tools extensive project experience and Mimic Pro simulations to make you job-ready.
+
+          After you have completed this digital marketing training program, you will be confidently implementing marketing strategies across the major online marketing channels.
+           <br>
+      <br>Duration:&nbsp
+      This is a 15 Days/ 30 hours program and most of the syllabus will be case study based or practical oriented.<br>
+      <br> Course Fee: Free</br>
+      <br>Requirements:&nbsp<br>
+       •No experience required.<br> • Suitable for all types of businesses (digital product, physical product, service, B2B, B2C).
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Android Modal -->
+      <div class="modal fade" id="AndModal" tabindex="-1" aria-labelledby="AndModalModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="AndModalTitle">About Course</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              In this course, you will discover the power of Android app development, and obtain the skills to dramatically increase your career prospects as a software developer. You’ll also have a head start over other developers using obsolete tools and earlier versions of Android.
+
+  Android is continually being updated and you'll learn how to target but users of current versions of Android and older versions as well.
+
+  With this course, you get the best of both worlds. You’re taught to write code for Android that works with the current version and older versions of Android by using the AppCompat library. That way, the apps you build will work with more versions of Android, giving you access to a wider audience of users.
+           <br>
+      <br>Duration:&nbsp
+      This is a 15 Days/ 30 hours program and most of the syllabus will be case study based or practical oriented.<br>
+      <br> Course Fee: Free</br>
+      <br>Requirements:&nbsp<br>
+       •A Windows computer, a Mac, or a Linux machine so that the free Google Android Studio tool can be downloaded and install (full instructions included).<br> • An open mind to learn something new and exciting which may make a huge difference in your future career.<br>• Everything else needed to write apps for Android 8 Oreo with Kotlin is already included in the course.
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+            {% block body %}  {% endblock body %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

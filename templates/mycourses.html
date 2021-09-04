@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+      <title>Course Shop | My Courses</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href='{% static 'css_sheet.css' %}' rel='stylesheet'>
+<style>
+  html, body {
+    font-family: Quicksand, sans-serif;
+  }
+  }
+#comp
+{
+  margin-top:80px;
+  margin-left:150px;
+margin-right:150px;
+margin-bottom:80px;
+}
+.footer1
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #04AA6D;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+#yash
+{
+  margin-bottom:180px;
+  padding-bottom:500px;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 20px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+#cov1
+{
+    margin-top: 50px;
+    padding-top: 0px;
+    margin-left: 20px;
+    font-family: 'Fredoka One', cursive;
+    padding-bottom: 0px;
+    text-align: center;
+    font-size: 50px;
+
+}
+#head
+{
+background-color: #45CAE6;
+}
+</style>
+</head>
+<body style="margin:0">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src='{% static "img/logo1.png" %}' width="40px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item {% block homeactive %}  {% endblock homeactive %}">
+            <a class="nav-link" href="/afterlogin">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item {% block aboutactive %}  {% endblock aboutactive %}" >
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+          <li class="nav-item {% block contactactive %}  {% endblock contactactive %} ">
+            <a class="nav-link" href="#">My Courses</a>
+          </li>
+
+
+
+        </ul>
+        <ul class="navbar-nav ml-2">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown"> Welcome {{request.user}}</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          <a class="dropdown-item" href="/logout">Logout</a>
+
+                </div>
+              </li>
+              </ul>
+      </nav>
+        <img src='{% static "img/mycourses.png" %}' width="250px" class="center">
+<div id="yash">
+{% for ord in order1 %}
+<div class="card" id="comp">
+<div>
+  <div class="card-header" id="head">
+    <strong>Course: {{ord.course}}</strong>
+  </div>
+  <div class="card-body">
+    <ul style="  list-style-type: none;">
+    <li><strong>Name:</strong>&nbsp{{ ord.name}}</li>
+    <li><strong>Email address:</strong>&nbsp {{ ord.phone}}</li>
+    <li><strong>Phone Number:</strong>&nbsp {{ ord.email}}</li>
+    <li><strong>Address:</strong>&nbsp {{ ord.address}}</li>
+    <li><strong>Date of Purchase:</strong>&nbsp {{ ord.timeStamp}}</li>
+    </ul>
+    </div>
+</div>
+<br>
+</div>
+<br>
+{% endfor %}
+
+      <div class="footer1">
+          <p>Copyright © 2021 by Course Shop. All Rights Reserved.</p>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
